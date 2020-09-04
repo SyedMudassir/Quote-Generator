@@ -3,23 +3,23 @@ const  quoteText = document.getElementById("quote");
 const  quoteAuthor = document.getElementById("author");
 const twitterBtn = document.getElementById("twitterButton");
 const  newQuoteBtn = document.getElementById("newQuoteButton");
-const loader= document.getElementById("loader");
+const loader = document.getElementById("loader");
 // Show Loading spinner
 function showLoadingSpinner(){
   loader.hidden = false;
   quoteContainer.hidden = true;
 }
-// Remove Loading spinner
+// // Remove Loading spinner
 function removeLoadingSpinner(){
   if(!loader.hidden){
+    quoteContainer.hidden = false;
     loader.hidden = true;
-  quoteContainer.hidden = false;
   }
 }
 // Get Quote From API
 async function getQuote () {
   showLoadingSpinner();
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  const proxyUrl = "https://powerful-falls-72254.herokuapp.com/";
   const apiUrl = "http://api.forismatic.com/api/1.0/?getQuote&lang=en&format=json";
 try{
   const respone = await fetch(proxyUrl + apiUrl);
